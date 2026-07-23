@@ -41,24 +41,21 @@ export default function PrintingPage() {
           <figure className="dark-card relative min-h-[440px] overflow-hidden sm:min-h-[520px]">
             <Image
               src="/images/customer-projects/custom-jersey-logo-3d-printing.webp"
-              alt="3D printer producing a custom circular jersey logo"
+              alt="3D printer producing a custom Jokey Jersey display rack logo"
               fill
               priority
               sizes="(max-width: 991px) 100vw, 46vw"
               className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/5 to-black/30" />
-            <div className="absolute inset-x-0 top-0 flex items-center justify-between p-5 sm:p-6">
+            <div className="absolute inset-x-0 top-0 flex items-center p-5 sm:p-6">
               <span className="rounded-full border border-white/15 bg-black/45 px-3 py-1.5 text-[9px] font-semibold tracking-[0.15em] text-white/80 uppercase backdrop-blur-md">
-                Actual project
-              </span>
-              <span className="rounded-full border border-brand/25 bg-black/45 px-3 py-1.5 text-[9px] font-semibold tracking-[0.15em] text-brand uppercase backdrop-blur-md">
-                In production
+                Customer project
               </span>
             </div>
             <figcaption className="absolute right-0 bottom-0 left-0 p-6 sm:p-8">
-              <p className="text-lg font-semibold text-white">Custom jersey logo</p>
-              <p className="mt-1 text-xs text-zinc-300">A real print in progress inside the Voxel Vandal workshop.</p>
+              <p className="text-lg font-semibold text-white">Jokey Jersey display rack logo</p>
+              <p className="mt-1 text-xs text-zinc-300">Custom 3D-printed branding made for a basketball jersey display rack.</p>
             </figcaption>
           </figure>
         </div>
