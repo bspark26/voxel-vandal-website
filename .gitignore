@@ -11,6 +11,13 @@
 # next.js
 /.next/
 /out/
+*.tsbuildinfo
+
+# Local high-resolution image sources (optimized web versions are committed)
+/public/images/about/*.jpg
+/public/images/concept/sample*.png
+/public/images/concept/sample*.webp
+/public/images/customer projects/
 
 # production
 /build
