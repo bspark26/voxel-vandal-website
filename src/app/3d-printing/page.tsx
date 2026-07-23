@@ -1,4 +1,5 @@
 import { createPageMetadata } from "@/lib/metadata";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = createPageMetadata({
@@ -37,19 +38,29 @@ export default function PrintingPage() {
               Request a project review <span aria-hidden="true">↗</span>
             </Link>
           </div>
-          <div className="dark-card relative min-h-[390px] overflow-hidden p-8">
-            <div className="grid-surface absolute inset-0 opacity-55" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(53,184,74,.14),transparent_58%)]" />
-            <div className="relative grid h-full min-h-[325px] place-items-center">
-              <div className="absolute h-64 w-64 rotate-45 rounded-[3.5rem] border border-white/8" />
-              <div className="absolute h-48 w-48 rotate-45 rounded-[2.5rem] border border-brand/25" />
-              <div className="relative flex h-40 w-40 rotate-[22deg] items-center justify-center rounded-[2.2rem] border border-white/15 bg-[#171d18] shadow-2xl shadow-black/60">
-                <div className="h-20 w-20 rounded-2xl border-[12px] border-brand shadow-[0_0_40px_rgba(53,184,74,.16)]" />
-              </div>
-              <div className="absolute top-0 left-0 text-[9px] tracking-[0.18em] text-zinc-500 uppercase">Custom geometry</div>
-              <div className="absolute right-0 bottom-0 text-[9px] tracking-[0.18em] text-brand uppercase">Ready to produce</div>
+          <figure className="dark-card relative min-h-[440px] overflow-hidden sm:min-h-[520px]">
+            <Image
+              src="/images/customer-projects/custom-jersey-logo-3d-printing.webp"
+              alt="3D printer producing a custom circular jersey logo"
+              fill
+              priority
+              sizes="(max-width: 991px) 100vw, 46vw"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/5 to-black/30" />
+            <div className="absolute inset-x-0 top-0 flex items-center justify-between p-5 sm:p-6">
+              <span className="rounded-full border border-white/15 bg-black/45 px-3 py-1.5 text-[9px] font-semibold tracking-[0.15em] text-white/80 uppercase backdrop-blur-md">
+                Actual project
+              </span>
+              <span className="rounded-full border border-brand/25 bg-black/45 px-3 py-1.5 text-[9px] font-semibold tracking-[0.15em] text-brand uppercase backdrop-blur-md">
+                In production
+              </span>
             </div>
-          </div>
+            <figcaption className="absolute right-0 bottom-0 left-0 p-6 sm:p-8">
+              <p className="text-lg font-semibold text-white">Custom jersey logo</p>
+              <p className="mt-1 text-xs text-zinc-300">A real print in progress inside the Voxel Vandal workshop.</p>
+            </figcaption>
+          </figure>
         </div>
       </section>
 

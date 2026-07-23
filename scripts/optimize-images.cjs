@@ -64,6 +64,16 @@ Promise.all(
           "unreal-bike-park-printed-qr-display.webp",
         ),
       ),
+    sharp(path.join(customerSourceDirectory, "joker-jersey-logo.jpg"))
+      .rotate()
+      .resize({ width: 1600, withoutEnlargement: true })
+      .webp({ quality: 84, effort: 6 })
+      .toFile(
+        path.join(
+          customerOutputDirectory,
+          "custom-jersey-logo-3d-printing.webp",
+        ),
+      ),
     sharp(path.join(aboutDirectory, "brook-taylor-waterfall.jpg"))
       .rotate()
       .resize({ width: 1800, withoutEnlargement: true })
