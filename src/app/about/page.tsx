@@ -120,7 +120,7 @@ export default function AboutPage() {
           </article>
 
           <article className="dark-card p-7 sm:p-9 lg:p-11">
-            <p className="eyebrow">Outside the workshop</p>
+            <p className="eyebrow">When we’re not making things</p>
             <h2 className="mt-5 text-3xl leading-tight font-semibold tracking-[-0.035em] text-white sm:text-4xl">
               Built by people who use what they make.
             </h2>
