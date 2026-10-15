@@ -1,0 +1,43 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "voxel-vandal-smart-qr-dashboard",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-07-24",
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [
+    {
+      "pattern": "admin.voxelvandal.com",
+      "custom_domain": true
+    }
+  ],
+  "vars": {
+    "DASHBOARD_MODE": "cloudflare-access",
+    "TEAM_DOMAIN": "https://voxel-vandal.cloudflareaccess.com",
+    "POLICY_AUD": "3b62fa5567c31d500554a01ce737c5f88228dbef43b2610bdbd25850d99b0741",
+    "ADMIN_EMAILS": "agentbrook@gmail.com"
+  },
+  "assets": {
+    "directory": "./dist/client",
+    "binding": "STATIC_ASSETS",
+    "run_worker_first": true,
+    "not_found_handling": "single-page-application"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "smart-qr-db",
+      "database_id": "25ecf6c9-df36-4495-a968-b84558f21e91",
+      "migrations_dir": "../../services/smart-qr-redirect/migrations"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "MANUFACTURING_ASSETS",
+      "bucket_name": "smart-qr-manufacturing-assets"
+    }
+  ],
+  "observability": {
+    "enabled": true
+  }
+}

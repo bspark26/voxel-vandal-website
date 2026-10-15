@@ -1,0 +1,35 @@
+{
+  "name": "voxel-vandal-smart-qr-dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently --kill-others \"npm:dev:worker\" \"npm:dev:client\"",
+    "dev:client": "vite",
+    "dev:worker": "wrangler dev --local --port 8788",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "build:client": "vite build",
+    "build:worker": "wrangler deploy --dry-run --outdir dist/worker",
+    "build": "npm run typecheck && npm test && npm run build:client && npm run build:worker",
+    "db:migrate:local": "wrangler d1 migrations apply smart-qr-db --local",
+    "db:seed:local": "wrangler d1 execute smart-qr-db --local --file=./seed/local.sql"
+  },
+  "dependencies": {
+    "@voxel-vandal/smart-qr-manufacturing": "file:../../packages/smart-qr-manufacturing",
+    "jose": "^6.1.3",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20260724.1",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "@vitejs/plugin-react": "^5.0.4",
+    "concurrently": "^9.2.1",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.6",
+    "vitest": "^4.1.10",
+    "wrangler": "^4.114.0"
+  }
+}

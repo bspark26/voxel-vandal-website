@@ -1,0 +1,22 @@
+{
+  "name": "voxel-vandal-smart-qr-redirect",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev --local",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "build": "wrangler deploy --dry-run --outdir dist",
+    "db:migrate:local": "wrangler d1 migrations apply smart-qr-db --local",
+    "db:seed:local": "wrangler d1 execute smart-qr-db --local --file=./seed/local.sql",
+    "db:migrate:remote": "wrangler d1 migrations apply smart-qr-db --remote",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20260724.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.10",
+    "wrangler": "^4.114.0"
+  }
+}

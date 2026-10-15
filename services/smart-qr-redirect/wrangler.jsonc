@@ -1,0 +1,25 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "voxel-vandal-smart-qr-redirect",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-07-24",
+  "workers_dev": true,
+  "preview_urls": true,
+  "routes": [
+    {
+      "pattern": "q.voxelvandal.com",
+      "custom_domain": true
+    }
+  ],
+  "observability": {
+    "enabled": true
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "smart-qr-db",
+      "database_id": "25ecf6c9-df36-4495-a968-b84558f21e91",
+      "migrations_dir": "migrations"
+    }
+  ]
+}
